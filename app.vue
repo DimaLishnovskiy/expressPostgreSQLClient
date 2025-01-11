@@ -35,6 +35,7 @@ const addUser = async (name, email) => {
 
     const result = await response.json();
     console.log('User added:', result);
+
     return result;
   } catch (error) {
     console.error('Error adding user:', error);
