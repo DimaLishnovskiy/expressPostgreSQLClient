@@ -2,6 +2,9 @@
 
 const baseUrl = useRuntimeConfig().public.BASE_URL;
 
+console.log('baseUrl client:', baseUrl);
+
+
 const users = ref([]);
 const error = ref(null);
 const name = ref('');

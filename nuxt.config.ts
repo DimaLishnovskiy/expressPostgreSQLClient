@@ -10,7 +10,9 @@ export default defineNuxtConfig({
       // BASE_URL: `http://${process.env.DB_HOST || "localhost"}:${
       //   process.env.SERVER_PORT || 5001
       // }`,
-      BASE_URL: process.env.SERVER_ADDRESS,
+      BASE_URL:
+        process.env.SERVER_ADDRESS ||
+        "https://expresspostgresqlserver.onrender.com",
     },
   },
 
