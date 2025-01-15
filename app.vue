@@ -2,7 +2,7 @@
 
 const baseUrl = useRuntimeConfig().public.BASE_URL;
 
-console.log('baseUrl client:', baseUrl);
+console.log('baseUrl for server request client:', baseUrl);
 
 
 const users = ref([]);
@@ -12,7 +12,7 @@ const email = ref('');
 
 onMounted(async () => {
   try {
-    const response = await fetch(`${baseUrl}/users`);
+    const response = await fetch(`${baseUrl}/api/users`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -24,7 +24,7 @@ onMounted(async () => {
 
 const addUser = async (name, email) => {
   try {
-    const response = await fetch(`${baseUrl}/users/add`, {
+    const response = await fetch(`${baseUrl}/api/users/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const addUser = async (name, email) => {
 
 const deleteUser = async (id) => {
   try {
-    const response = await fetch(`${baseUrl}/users/${id}`, {
+    const response = await fetch(`${baseUrl}/api/users/${id}`, {
       method: "DELETE",
     });
 
